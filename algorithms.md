@@ -9,10 +9,10 @@
 #
 ```mermaid
 graph LR
-    Start["Start: Unsorted array"] --> InitI["i := 1"]
+    Start(["Start: Unsorted array"]) --> InitI["i := 1"]
     InitI --> CheckI{"i <= N-1?"}
     CheckI -- Yes --> InitJ["j := 1"]
-    CheckI -- No --> End["End: Sorted array"]
+    CheckI -- No --> End(["End: Sorted array"])
     InitJ --> CheckJ{"j <= N-i?"}
     CheckJ -- No --> IncI["i := i + 1"]
     IncI --> CheckI
@@ -24,7 +24,7 @@ graph LR
     Swap2 --> Swap3["A[j+1] := TEMP"]
     Swap3 --> IncJ
 ```
-mermaid másik változat:
+###
 ``` mermaid
 graph TD
     A[Unsorted: 5, 1, 4, 2] -->|5 > 1 ? YES -> SWAP| B[1, 5, 4, 2]
@@ -35,6 +35,7 @@ graph TD
     E -->|4 > 2 ? YES -> SWAP| F[1, 2, 4, 5]
     F -->|4 > 5 ? NO| G[Sorted: 1, 2, 4, 5]
 ```
+###
 ```
 Bemenet:	A[1..N]  rendezetlen tömb
 Kimenet:	A[1..N]  rendezett tömb
@@ -48,7 +49,7 @@ Algoritmus:
             Elágazás vége
         Ciklus vége
     Ciklus vége
-Algoritmus vége```
+Algoritmus vége
 
 ```
 ```
@@ -64,7 +65,7 @@ Algorithm:
             End if
         End loop
     End loop
-End algorithm ```
+End algorithm
 ```
 ### Megvalósítás - Implementation
 | HU | EN |
@@ -182,3 +183,19 @@ for i in range(N - 1):
 
 print("Sorted:", house)
 ```
+### Time Complexity
+| HU | EN |
+| ----------- | ----------- |
+| Az időbonyolultság egy algoritmus futtatásához szükséges műveletek száma| Time complexity is the number of operations needed to run an algorithm |
+| n elemű tömbben n összehasonlítás történik egy ciklusban | In an array of n elements, n comparisons are made in one cycle. |
+| A ciklus n alkalommal ismétlődik -> n * n  | The cycle repeats n times -> n * n|
+| O: az algoritmus időbonyolultsága a legrosszabb esetben|O: means worst case time complexity for an algorithm|
+
+O(n<sup>2</sup>)
+```mermaid
+xychart-beta
+    title "O(n^2) Time Complexity"
+    x-axis "n" 0 --> 10
+    y-axis "Time" 0 --> 100
+    line "O(n^2)" [0,1,4,9,16,25,36,49,64,81,100]
+```   
